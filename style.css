@@ -1,0 +1,226 @@
+@font-face {
+  font-family: "main-font";
+  src: url(./fonts/Montserrat-Thin.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "main-font";
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: "main-font";
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 900;
+  color: black;
+  letter-spacing: 2px;
+  border: 1px rgb(207, 205, 205) solid;
+  border-radius: 30px;
+  padding: 12px 23px;
+  background: transparent;
+  margin: 20px 0;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  border: 1px solid skyblue;
+  color: skyblue;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-part {
+  padding: 50px 20px;
+  margin: auto 50px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+/* ********************** HEADER ***************************** */
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px rgba(128, 128, 128, 0.171) solid;
+}
+
+.header h1 {
+  font-weight: 600;
+  font-size: 4rem;
+  margin: 30px 0;
+}
+
+.header p {
+  margin-bottom: 10px;
+}
+
+/* ************************ FIRST PART ***************************** */
+
+.first-part {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border-bottom: 1px rgba(128, 128, 128, 0.171) solid;
+}
+
+/* ************************ SECOND PART ***************************** */
+
+.second-part {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  border-bottom: 1px rgba(128, 128, 128, 0.171) solid;
+}
+
+.second-part-right {
+  text-align: right;
+  max-height: 500px;
+}
+
+/* ************************** FORM ******************************** */
+
+.contact {
+  position: relative;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.form h1 {
+  margin: 50px 0;
+}
+
+.form-grid {
+  max-width: 600px;
+  width: 85%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100px 224px;
+  grid-template-areas:
+    "input input"
+    "textarea textarea";
+  gap: 10px;
+}
+
+label {
+  font-weight: 600px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  margin: 20px 0 40px;
+  border: 1px rgba(128, 128, 128, 0.329) solid;
+  border-radius: 4px;
+  padding: 10px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border: 2px solid skyblue;
+}
+
+.textarea {
+  grid-area: textarea;
+}
+
+textarea {
+  margin-top: 50px;
+  resize: none;
+  height: 180px;
+}
+
+/* *************** GREY BAR ********************* */
+
+.contact::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: rgba(128, 128, 128, 0.329);
+  width: 90%;
+  bottom: 0;
+  transform: translateX(-50%);
+  transform-origin: left;
+}
+
+/* ***************************** SOCIAL NETWORKS ***********************  */
+
+.social-medias {
+  margin: 50px 0;
+}
+
+.social-medias-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0 30%;
+}
+
+.social-medias-container i {
+  border: 1px rgba(128, 128, 128, 0.329) solid;
+  border-radius: 50px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-medias-container i:hover {
+  color: rgb(0, 204, 255);
+}
+
+/* ************************* MEDIA QUERIES ************************************** */
+
+@media screen and (max-width: 1000px) {
+  .first-part img {
+    display: none;
+  }
+
+  .second-part img {
+    display: none;
+  }
+
+  .header,
+  .first-part,
+  .second-part {
+    display: block;
+  }
+
+  .second-part img {
+    max-height: 500px;
+  }
+
+  .form {
+    padding: 50px 0;
+    margin: 0 10%;
+  }
+
+  .form input {
+    height: 25px;
+  }
+
+  .social-medias-container {
+    padding: 0 10%;
+  }
+
+  .text-part:nth-child(1) {
+    margin: 0;
+  }
+}
